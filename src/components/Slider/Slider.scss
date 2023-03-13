@@ -1,0 +1,268 @@
+.slider__container {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    
+   
+  }
+  
+  .slider__heading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    padding: 3rem;
+    z-index: 99;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.5);
+    color: #405d59;
+    transform: translate3d(-50%, -50%, 0);
+    &__title {
+      font-size: 54px;
+      font-weight: 300;
+      color: #405d59;
+      font-family: Verdana, sans-serif;
+    }
+  }
+  /* Responsive styles for the heading */
+  /* ===== == = === 30em (480px) === = == ===== */
+  @media only screen and (min-width: 30em) {
+    .slider__heading h1 {
+      font-size: 1.5rem;
+    }
+  }
+  /* ===== == = === 48em (768px) === = == ===== */
+  @media only screen and (min-width: 48em) {
+    .slider__heading h1 {
+      font-size: 1.75rem;
+    }
+  }
+  
+  .btn__slider {
+    padding: 0.7rem 2rem;
+    font-size: 1rem;
+    text-decoration: none;
+    text-shadow: 1px 1px 1px #999999;
+    background: transparent;
+    box-shadow: 0 0 2px 1px #405d59;
+    color: #405d59;
+  }
+  /* Responsive styles for the button */
+  /* ===== == = === 30em (480px) === = == ===== */
+  @media only screen and (min-width: 30em) {
+    .btn {
+      font-size: 1rem;
+    }
+  }
+  /* ===== == = === 48em (768px) === = == ===== */
+  @media only screen and (min-width: 48em) {
+    .btn {
+      font-size: 1.25rem;
+    }
+  }
+  .btn__slider:hover {
+    text-decoration: none;
+    color: #fff;
+    background-color: #405d59;
+    box-shadow: 0 0 2px 1px #fff;
+  }
+  
+  .slider__image {
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    animation: 45s ease-in-out infinite;
+    object-position: center;
+    object-fit: cover;
+  }
+  /* Name of animations and selection of images */
+  .slider__image:nth-of-type(1) {
+    animation-name: slide-01;
+  }
+  .slider__image:nth-of-type(2) {
+    animation-name: slide-02;
+  }
+  .slider__image:nth-of-type(3) {
+    animation-name: slide-03;
+  }
+  
+  /* Images are overlaid and visible or invisible due to different transparency */
+  /* Moving the images with transform: scale & translate */
+  /* Styles for webkit browsers */
+  @-webkit-keyframes slide-01 {
+    0% {
+      opacity: 1;
+      -webkit-transform: scale(1.4) translate(0, 0);
+    }
+    16% {
+      opacity: 1;
+      -webkit-transform: scale(1.2) translate(-20px, -10px);
+    }
+    33% {
+      opacity: 0;
+      -webkit-transform: scale(1.4) translate(0, 0);
+    }
+    50% {
+      opacity: 0;
+    }
+    67% {
+      opacity: 0;
+    }
+    84% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+      -webkit-transform: scale(1.4) translate(0, 0);
+    }
+  }
+  @-webkit-keyframes slide-02 {
+    0% {
+      opacity: 0;
+    }
+    16% {
+      opacity: 0;
+      -webkit-transform: scale(1.2) translate(-20px, -10px);
+    }
+    33% {
+      opacity: 1;
+      -webkit-transform: scale(1.4) translate(0, 0);
+    }
+    50% {
+      opacity: 1;
+      -webkit-transform: scale(1.2) translate(-20px, 10px);
+    }
+    67% {
+      opacity: 0;
+      -webkit-transform: scale(1.4) translate(0, 0);
+    }
+    84% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  @-webkit-keyframes slide-03 {
+    0% {
+      opacity: 0;
+    }
+    16% {
+      opacity: 0;
+    }
+    33% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 0;
+      -webkit-transform: scale(1.4) translate(0, 0);
+    }
+    67% {
+      opacity: 1;
+      -webkit-transform: scale(1.4) translate(-20px, 10px);
+    }
+    84% {
+      opacity: 1;
+      -webkit-transform: scale(1.2) translate(20px, -10px);
+    }
+    100% {
+      opacity: 0;
+      -webkit-transform: scale(1.4) translate(0, 0);
+    }
+  }
+  
+  /* Styles for all other browsers */
+  @keyframes slide-01 {
+    0% {
+      opacity: 1;
+      transform: scale(1.4) translate(0, 0);
+    }
+    16% {
+      opacity: 1;
+      transform: scale(1.2) translate(-20px, -10px);
+    }
+    33% {
+      opacity: 0;
+      transform: scale(1.4) translate(0, 0);
+    }
+    50% {
+      opacity: 0;
+    }
+    67% {
+      opacity: 0;
+    }
+    84% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1.4) translate(0, 0);
+    }
+  }
+  @keyframes slide-02 {
+    0% {
+      opacity: 0;
+    }
+    16% {
+      opacity: 0;
+      transform: scale(1.2) translate(-20px, -10px);
+    }
+    33% {
+      opacity: 1;
+      transform: scale(1.4) translate(0, 0);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.2) translate(-20px, 10px);
+    }
+    67% {
+      opacity: 0;
+      transform: scale(1.4) translate(0, 0);
+    }
+    84% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  @keyframes slide-03 {
+    0% {
+      opacity: 0;
+    }
+    16% {
+      opacity: 0;
+    }
+    33% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 0;
+      transform: scale(1.4) translate(0, 0);
+    }
+    67% {
+      opacity: 1;
+      transform: scale(1.4) translate(-20px, 10px);
+    }
+    84% {
+      opacity: 1;
+      transform: scale(1.2) translate(20px, -10px);
+    }
+    100% {
+      opacity: 0;
+      transform: scale(1.4) translate(0, 0);
+    }
+  }
+  
+
+
+
+
+
+
+  
